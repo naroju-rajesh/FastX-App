@@ -1,0 +1,385 @@
+@charset "UTF-8";
+/* ==========================================================
+   FASTX GLOBAL COMMON NAVBAR STYLES & LOGOUT CONFIRMATION MODAL
+   ========================================================== */
+:root {
+    --nav-forest: #00473c;
+    --nav-forest-light: #0a584c;
+    --nav-forest-dark: #00332a;
+    --nav-lime: #e6ff55;
+    --nav-lime-hover: #d6f238;
+    --nav-text-dark: #111813;
+    --nav-text-muted: #5e6d5e;
+    --nav-border: rgba(0, 71, 60, 0.1);
+    --nav-bg: rgba(255, 255, 255, 0.96);
+    --nav-shadow: 0 4px 20px rgba(0, 71, 60, 0.04);
+}
+
+.fastx-navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: var(--nav-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--nav-border);
+    box-shadow: var(--nav-shadow);
+    padding: 0.85rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.fastx-nav-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+
+/* Brand Logo */
+.fastx-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: var(--nav-forest);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.45rem;
+    letter-spacing: -0.5px;
+    flex-shrink: 0;
+}
+
+.fastx-nav-brand .brand-dot {
+    color: #ff5e3a;
+}
+
+/* Navigation Links Center/Left */
+.fastx-nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.fastx-nav-item {
+    position: relative;
+}
+
+.fastx-nav-link {
+    text-decoration: none;
+    color: var(--nav-forest);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.5rem 0.95rem;
+    border-radius: 50px;
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    transition: all 0.2s ease;
+}
+
+.fastx-nav-link:hover {
+    background: rgba(0, 71, 60, 0.06);
+    color: var(--nav-forest-light);
+    transform: translateY(-1px);
+}
+
+.fastx-nav-link.active {
+    background: rgba(0, 71, 60, 0.1);
+    color: var(--nav-forest);
+}
+
+/* Live Cart Count Badge */
+.fastx-cart-btn {
+    background: #ffffff;
+    border: 1px solid var(--nav-border);
+    box-shadow: 0 2px 6px rgba(0, 71, 60, 0.05);
+}
+
+.fastx-cart-btn:hover {
+    background: #f4f8f3;
+    border-color: var(--nav-forest);
+}
+
+.fastx-cart-badge {
+    background: var(--nav-forest);
+    color: var(--nav-lime);
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 0.15rem 0.45rem;
+    border-radius: 50px;
+    min-width: 18px;
+    text-align: center;
+    line-height: 1;
+}
+
+/* Auth Action Buttons (Right) */
+.fastx-nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.fastx-login-btn {
+    text-decoration: none;
+    color: var(--nav-forest);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.55rem 1.15rem;
+    border-radius: 50px;
+    background: rgba(0, 71, 60, 0.06);
+    border: 1px solid rgba(0, 71, 60, 0.12);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.fastx-login-btn:hover {
+    background: rgba(0, 71, 60, 0.12);
+    color: var(--nav-forest);
+    transform: translateY(-1px);
+}
+
+.fastx-signup-btn {
+    text-decoration: none;
+    color: #0d1e18;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 800;
+    padding: 0.55rem 1.25rem;
+    border-radius: 50px;
+    background: var(--nav-lime);
+    border: none;
+    box-shadow: 0 4px 14px rgba(230, 255, 85, 0.4);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.fastx-signup-btn:hover {
+    background: var(--nav-lime-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(230, 255, 85, 0.55);
+}
+
+/* User Profile Pill (When Logged In) */
+.fastx-profile-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    background: #f4f8f3;
+    border: 1px solid rgba(0, 71, 60, 0.15);
+    padding: 0.4rem 0.9rem;
+    border-radius: 50px;
+    color: var(--nav-forest);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.fastx-profile-pill:hover {
+    background: rgba(0, 71, 60, 0.1);
+    transform: translateY(-1px);
+}
+
+.fastx-avatar-circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--nav-forest);
+    color: var(--nav-lime);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+/* Logout Trigger Button */
+.fastx-logout-btn {
+    text-decoration: none;
+    color: #b91c1c;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.45rem 0.9rem;
+    border-radius: 50px;
+    background: rgba(185, 28, 28, 0.06);
+    border: 1px solid rgba(185, 28, 28, 0.15);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.fastx-logout-btn:hover {
+    background: rgba(185, 28, 28, 0.12);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================
+   LOGOUT CONFIRMATION MODAL (Sweetgreen Aesthetic)
+   ========================================================== */
+.fastx-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 51, 42, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.fastx-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.fastx-modal-card {
+    background: #ffffff;
+    border-radius: 20px;
+    max-width: 420px;
+    width: 100%;
+    padding: 32px 28px;
+    text-align: center;
+    box-shadow: 0 20px 45px rgba(0, 71, 60, 0.25);
+    border: 1px solid rgba(0, 71, 60, 0.12);
+    transform: scale(0.88) translateY(10px);
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fastx-modal-overlay.active .fastx-modal-card {
+    transform: scale(1) translateY(0);
+}
+
+.fastx-modal-icon-wrap {
+    width: 64px;
+    height: 64px;
+    background: rgba(185, 28, 28, 0.08);
+    color: #b91c1c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin: 0 auto 16px auto;
+    border: 1px solid rgba(185, 28, 28, 0.15);
+}
+
+.fastx-modal-title {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--nav-forest);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.fastx-modal-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--nav-text-muted);
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+.fastx-modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.fastx-modal-btn-cancel {
+    flex: 1;
+    background: #f4f8f3;
+    color: var(--nav-forest);
+    border: 1px solid rgba(0, 71, 60, 0.15);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.fastx-modal-btn-cancel:hover {
+    background: rgba(0, 71, 60, 0.08);
+    transform: translateY(-1px);
+}
+
+.fastx-modal-btn-confirm {
+    flex: 1;
+    background: #b91c1c;
+    color: #ffffff;
+    border: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 12px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(185, 28, 28, 0.3);
+    transition: all 0.2s ease;
+}
+
+.fastx-modal-btn-confirm:hover {
+    background: #991b1b;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(185, 28, 28, 0.45);
+}
+
+/* Responsive Mobile Navigation */
+@media (max-width: 900px) {
+    .fastx-navbar {
+        padding: 0.75rem 1rem;
+    }
+
+    .fastx-nav-menu {
+        gap: 0.25rem;
+    }
+
+    .fastx-nav-link {
+        font-size: 0.82rem;
+        padding: 0.4rem 0.65rem;
+    }
+
+    .fastx-login-btn,
+    .fastx-signup-btn {
+        font-size: 0.82rem;
+        padding: 0.45rem 0.85rem;
+    }
+}

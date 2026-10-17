@@ -1,0 +1,583 @@
+@charset "UTF-8";
+/* ==========================================================================
+   FASTX SWEETGREEN DESIGN SYSTEM — USER PROFILE STYLESHEET (profile.css)
+   Light Warm Organic Luxury Aesthetic with Security & Password Management
+   ========================================================================== */
+
+:root {
+  --color-deep-forest: #00473c;
+  --color-forest-medium: #0b594b;
+  --color-forest-dark: #00332a;
+  --color-lime-glow: #e6ff55;
+  --color-lime-hover: #d7f542;
+  --color-sage-mist: #d8e5d6;
+  --color-warm-sand: #e8dcc6;
+  --color-cream-canvas: #f4f3e7;
+  --color-surface-white: #ffffff;
+  --color-forest-shadow: #142823;
+  --color-slate-gray: #556963;
+  --color-danger: #d93829;
+  --color-danger-bg: rgba(217, 56, 41, 0.1);
+  --color-success: #0b594b;
+  --color-success-bg: #d8e5d6;
+  --color-border: rgba(0, 71, 60, 0.12);
+  --color-border-hover: rgba(0, 71, 60, 0.35);
+
+  --font-headers: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+
+  --shadow-card: 0 4px 20px rgba(0, 71, 60, 0.06);
+  --shadow-card-hover: 0 16px 36px rgba(0, 71, 60, 0.12);
+  --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+}
+
+body {
+  background-color: var(--color-cream-canvas);
+  color: var(--color-forest-shadow);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   1. PROFILE MAIN CONTAINER & ALERTS
+   ========================================================================== */
+.profile-wrapper {
+  width: 100%;
+  max-width: 1120px;
+  margin: 36px auto 80px auto;
+  padding: 0 24px;
+  flex: 1;
+}
+
+.alert-banner {
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.alert-success {
+  background: var(--color-success-bg);
+  color: var(--color-deep-forest);
+  border: 1px solid var(--color-forest-medium);
+}
+
+.alert-error {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  border: 1px solid rgba(217, 56, 41, 0.3);
+}
+
+/* ==========================================================================
+   2. HERO PROFILE HEADER CARD
+   ========================================================================== */
+.profile-hero-card {
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-deep-forest) 0%, var(--color-lime-glow) 100%);
+}
+
+.hero-left {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.profile-avatar-large {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-deep-forest) 0%, var(--color-forest-medium) 100%);
+  color: var(--color-lime-glow);
+  font-family: var(--font-headers);
+  font-size: 36px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 71, 60, 0.22);
+  border: 3px solid var(--color-surface-white);
+  outline: 3px solid var(--color-lime-glow);
+  flex-shrink: 0;
+}
+
+.hero-info h1 {
+  font-family: var(--font-headers);
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--color-deep-forest);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.hero-badges-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.role-badge {
+  background: var(--color-deep-forest);
+  color: var(--color-lime-glow);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-family: var(--font-headers);
+}
+
+.verified-badge {
+  background: var(--color-sage-mist);
+  color: var(--color-deep-forest);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 11.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-edit-toggle {
+  background: var(--color-lime-glow);
+  color: var(--color-deep-forest);
+  border: none;
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-headers);
+  font-size: 13.5px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0, 71, 60, 0.1);
+}
+
+.btn-edit-toggle:hover {
+  background: var(--color-lime-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(230, 255, 85, 0.6);
+}
+
+.btn-logout {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  border: 1px solid rgba(217, 56, 41, 0.25);
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-headers);
+  font-size: 13.5px;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.btn-logout:hover {
+  background: var(--color-danger);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(217, 56, 41, 0.25);
+}
+
+/* ==========================================================================
+   3. PROFILE DETAILS & SHORTCUTS GRID
+   ========================================================================== */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.profile-left-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.card {
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 30px;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+}
+
+.card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 22px;
+}
+
+.card-title-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: rgba(0, 71, 60, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.card-title {
+  font-family: var(--font-headers);
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--color-deep-forest);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* Detail Fields View Mode */
+.detail-group {
+  margin-bottom: 20px;
+}
+
+.detail-group:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  font-family: var(--font-headers);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--color-slate-gray);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.detail-value-box {
+  background: var(--color-cream-canvas);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  color: var(--color-deep-forest);
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail-value-box.address-box {
+  min-height: 80px;
+  align-items: flex-start;
+  line-height: 1.5;
+}
+
+/* Edit Mode Inputs & Password Inputs */
+.edit-input, .edit-textarea {
+  width: 100%;
+  background: #ffffff;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  color: var(--color-forest-shadow);
+  font-size: 14.5px;
+  font-family: var(--font-body);
+  outline: none;
+  transition: var(--transition);
+}
+
+.edit-input:focus, .edit-textarea:focus {
+  border-color: var(--color-deep-forest);
+  box-shadow: 0 0 0 4px rgba(0, 71, 60, 0.1);
+}
+
+.edit-textarea {
+  min-height: 85px;
+  resize: vertical;
+}
+
+/* Password Field with Eye Toggle */
+.password-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-input-wrap .edit-input {
+  padding-right: 44px;
+}
+
+.btn-toggle-eye {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 17px;
+  cursor: pointer;
+  color: var(--color-slate-gray);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.btn-toggle-eye:hover {
+  color: var(--color-deep-forest);
+  transform: scale(1.1);
+}
+
+.field-hint {
+  font-size: 11.5px;
+  color: var(--color-slate-gray);
+  margin-top: 5px;
+}
+
+.form-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border);
+}
+
+.btn-save {
+  background: var(--color-lime-glow);
+  color: var(--color-deep-forest);
+  border: none;
+  padding: 12px 28px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-headers);
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(0, 71, 60, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-save:hover {
+  background: var(--color-lime-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 255, 85, 0.6);
+}
+
+.btn-cancel {
+  background: var(--color-cream-canvas);
+  color: var(--color-forest-shadow);
+  border: 1px solid var(--color-border);
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-headers);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-cancel:hover {
+  background: var(--color-sage-mist);
+  color: var(--color-deep-forest);
+}
+
+/* ==========================================================================
+   4. SIDEBAR SHORTCUTS & BENEFITS
+   ========================================================================== */
+.shortcuts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.shortcut-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: var(--color-cream-canvas);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--color-deep-forest);
+  font-weight: 700;
+  font-size: 14.5px;
+  font-family: var(--font-headers);
+  transition: var(--transition);
+}
+
+.shortcut-link:hover {
+  background: var(--color-sage-mist);
+  border-color: var(--color-deep-forest);
+  transform: translateX(4px);
+}
+
+.shortcut-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.shortcut-icon {
+  font-size: 18px;
+}
+
+.perks-card {
+  background: linear-gradient(135deg, var(--color-deep-forest) 0%, var(--color-forest-medium) 100%);
+  border-radius: var(--radius-xl);
+  padding: 26px;
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 71, 60, 0.25);
+}
+
+.perks-card h3 {
+  font-family: var(--font-headers);
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--color-lime-glow);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.perks-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 16px;
+}
+
+.perks-btn {
+  background: var(--color-lime-glow);
+  color: var(--color-deep-forest);
+  display: block;
+  text-align: center;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-headers);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.perks-btn:hover {
+  background: var(--color-lime-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(230, 255, 85, 0.5);
+}
+
+/* ==========================================================================
+   5. FOOTER
+   ========================================================================== */
+footer {
+  background: var(--color-deep-forest);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 24px;
+  font-size: 13.5px;
+  margin-top: auto;
+}
+
+footer span {
+  color: var(--color-lime-glow);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 900px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-hero-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .btn-edit-toggle, .btn-logout {
+    flex: 1;
+    justify-content: center;
+  }
+}

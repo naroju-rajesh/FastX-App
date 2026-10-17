@@ -1,0 +1,26 @@
+# Compiled class files
+/build/
+bin/
+*.class
+
+# Eclipse project files to ignore (keep .project, .classpath, and .settings for Eclipse Dynamic Web Projects)
+.metadata/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.recommenders
+
+# External Configuration / Sensitive Data
+config.properties
+db.properties
+.env
+*.local
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,14 @@
+# ==============================================================================
+# FASTX CONFIGURATION TEMPLATE
+# ==============================================================================
+# Copy this file to 'config.properties' in this folder and fill in your credentials.
+# ==============================================================================
+
+# Database Configuration
+db.url=jdbc:mysql://localhost:3306/FastX
+db.user=root
+db.password=YOUR_DATABASE_PASSWORD_HERE
+
+# Email Service Configuration (Gmail SMTP)
+mail.sender.email=your_email@gmail.com
+mail.sender.password=your_16_digit_app_password

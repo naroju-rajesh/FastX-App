@@ -1,0 +1,18 @@
+# ==============================================================================
+# FASTX CONFIGURATION TEMPLATE
+# ==============================================================================
+# Instructions:
+# 1. Copy this file to 'config.properties' in 'src/main/java/' (or root classpath).
+# 2. Fill in your actual MySQL database credentials and Google App Password.
+# 3. 'config.properties' is git-ignored to keep your credentials secure.
+# ==============================================================================
+
+# Database Configuration
+db.url=jdbc:mysql://localhost:3306/FastX
+db.user=root
+db.password=YOUR_DATABASE_PASSWORD_HERE
+
+# Email Service Configuration (Gmail SMTP)
+# For Gmail, generate a 16-character App Password at: https://myaccount.google.com/apppasswords
+mail.sender.email=your_email@gmail.com
+mail.sender.password=your_16_digit_app_password

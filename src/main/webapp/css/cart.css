@@ -1,0 +1,420 @@
+@charset "UTF-8";
+/* ==========================================================================
+   FASTX SWEETGREEN DESIGN SYSTEM — CART STYLESHEET (cart.css)
+   Light Warm Organic Luxury Aesthetic
+   ========================================================================== */
+
+:root {
+  /* Brand Identity Colors */
+  --color-deep-forest: #00473c;
+  --color-forest-medium: #0b594b;
+  --color-lime-glow: #e6ff55;
+  --color-lime-hover: #d7f542;
+  --color-sage-mist: #d8e5d6;
+  --color-warm-sand: #e8dcc6;
+  --color-cream-canvas: #f4f3e7;
+  --color-surface-white: #ffffff;
+  --color-forest-shadow: #142823;
+  --color-slate-gray: #556963;
+  --color-danger: #d93829;
+  --color-danger-bg: rgba(217, 56, 41, 0.1);
+  --color-border: rgba(0, 71, 60, 0.12);
+  --color-border-hover: rgba(0, 71, 60, 0.35);
+
+  /* Typography */
+  --font-headers: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Border Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 9999px;
+
+  /* Shadows & Transitions */
+  --shadow-card: 0 4px 20px rgba(0, 71, 60, 0.06);
+  --shadow-card-hover: 0 16px 36px rgba(0, 71, 60, 0.12);
+  --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+}
+
+body {
+  background-color: var(--color-cream-canvas);
+  color: var(--color-forest-shadow);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   1. CART MAIN CONTAINER & HEADER
+   ========================================================================== */
+.cart-wrapper {
+  width: 100%;
+  max-width: 1240px;
+  margin: 36px auto 80px auto;
+  padding: 0 24px;
+  flex: 1;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.cart-header h1 {
+  font-family: var(--font-headers);
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--color-deep-forest);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.cart-header h1 span {
+  color: var(--color-forest-medium);
+}
+
+.clear-btn {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  border: 1px solid rgba(217, 56, 41, 0.25);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 700;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.clear-btn:hover {
+  background: var(--color-danger);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   2. TWO-COLUMN CART GRID LAYOUT
+   ========================================================================== */
+.cart-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* Left Column: Items Card */
+.items-card {
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--color-border);
+  gap: 16px;
+}
+
+.item-row:last-child {
+  border-bottom: none;
+}
+
+.item-row img {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  background: var(--color-warm-sand);
+  flex-shrink: 0;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-details h3 {
+  font-family: var(--font-headers);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--color-deep-forest);
+  margin-bottom: 4px;
+}
+
+.item-details p {
+  color: var(--color-slate-gray);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+/* Quantity Stepper (+ / -) */
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-cream-canvas);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 4px 6px;
+  gap: 10px;
+}
+
+.stepper a {
+  width: 28px;
+  height: 28px;
+  background: var(--color-surface-white);
+  color: var(--color-deep-forest);
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 15px;
+  transition: var(--transition);
+}
+
+.stepper a:hover {
+  background: var(--color-deep-forest);
+  color: var(--color-lime-glow);
+}
+
+.stepper span {
+  font-family: var(--font-headers);
+  font-weight: 800;
+  font-size: 14.5px;
+  color: var(--color-deep-forest);
+  min-width: 20px;
+  text-align: center;
+}
+
+.line-price {
+  font-family: var(--font-headers);
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--color-deep-forest);
+  min-width: 80px;
+  text-align: right;
+}
+
+.del-btn {
+  color: var(--color-slate-gray);
+  text-decoration: none;
+  font-size: 16px;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.del-btn:hover {
+  color: var(--color-danger);
+  transform: scale(1.15);
+}
+
+.add-more-link-wrap {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.add-more-link {
+  color: var(--color-deep-forest);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.add-more-link:hover {
+  color: var(--color-forest-medium);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   3. RIGHT COLUMN: BILL SUMMARY CARD
+   ========================================================================== */
+.summary-card {
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 26px;
+  box-shadow: var(--shadow-card);
+  position: sticky;
+  top: 90px;
+}
+
+.summary-title {
+  font-family: var(--font-headers);
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--color-deep-forest);
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.bill-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: var(--color-slate-gray);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.bill-row span:last-child {
+  color: var(--color-deep-forest);
+  font-weight: 700;
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 16px 0;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.total-row span:first-child {
+  font-family: var(--font-headers);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-deep-forest);
+}
+
+.total-row .total-amount {
+  font-family: var(--font-headers);
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--color-deep-forest);
+}
+
+.checkout-btn {
+  background: var(--color-lime-glow);
+  color: var(--color-deep-forest);
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-headers);
+  font-size: 15px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  box-shadow: 0 4px 14px rgba(0, 71, 60, 0.12);
+  transition: var(--transition);
+}
+
+.checkout-btn:hover {
+  background: var(--color-lime-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 255, 85, 0.6);
+}
+
+/* ==========================================================================
+   4. EMPTY CART STATE
+   ========================================================================== */
+.empty-box {
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 520px;
+  margin: 40px auto;
+  box-shadow: var(--shadow-card);
+}
+
+.empty-box-icon {
+  font-size: 52px;
+  margin-bottom: 12px;
+}
+
+.empty-box h2 {
+  font-family: var(--font-headers);
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--color-deep-forest);
+  margin: 14px 0 8px 0;
+}
+
+.empty-box p {
+  color: var(--color-slate-gray);
+  font-size: 14.5px;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.explore-btn {
+  background: var(--color-deep-forest);
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.explore-btn:hover {
+  background: var(--color-forest-medium);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   5. FOOTER
+   ========================================================================== */
+footer {
+  background: var(--color-deep-forest);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 24px;
+  font-size: 13.5px;
+  margin-top: auto;
+}
+
+footer span {
+  color: var(--color-lime-glow);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 900px) {
+  .cart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-card {
+    position: static;
+  }
+}
