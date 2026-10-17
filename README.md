@@ -1,4 +1,4 @@
-# FastX - Gourmet Food Delivery Platform
+# FastX -  Food Delivery Platform
 
 FastX is a full-featured web-based food delivery and restaurant management application built with Java EE (Servlets & JSP), MySQL, and modern front-end technologies.
 
