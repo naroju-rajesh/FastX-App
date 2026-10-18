@@ -1,4 +1,4 @@
-# FastX — Gourmet Food Delivery & Restaurant Management Platform
+# FastX —  Food Delivery & Restaurant Management Platform
 
 > A full-stack, enterprise-grade Java EE web application engineered with modern Model-View-Controller (MVC) architecture, JDBC DAO design patterns, and an interactive luxury user interface. FastX delivers an end-to-end food ordering ecosystem for customers and a centralized administration console for restaurant partners.
 
